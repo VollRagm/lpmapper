@@ -222,7 +222,7 @@ namespace intel_driver
 
 	// I added this function to be able to call any kernel export by name
 	template<typename T, typename ...A>
-	bool Suscall(HANDLE device_handle, const std::string& exportName, T* result, const A ...arguments)
+	bool CallNtosExport(HANDLE device_handle, const std::string& exportName, T* result, const A ...arguments)
 	{
 		uint64_t functionAddress = GetKernelModuleExport(device_handle, intel_driver::ntoskrnlAddr, exportName);
 

