@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lpmapper", "lpmapper\lpmapper.vcxproj", "{4577C308-AB1B-4515-A96A-0C1600C957A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Debug|x64.ActiveCfg = Debug|x64
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Debug|x64.Build.0 = Debug|x64
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Debug|x86.ActiveCfg = Debug|Win32
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Debug|x86.Build.0 = Debug|Win32
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Release|x64.ActiveCfg = Release|x64
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Release|x64.Build.0 = Release|x64
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Release|x86.ActiveCfg = Release|Win32
+		{4577C308-AB1B-4515-A96A-0C1600C957A6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DC28338-3E79-48B2-90A7-B614AF43E6D3}
+	EndGlobalSection
+EndGlobal
