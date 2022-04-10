@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4577c308-ab1b-4515-a96a-0c1600c957a6}</ProjectGuid>
-    <RootNamespace>lpmapper</RootNamespace>
+    <ProjectGuid>{c3ab5304-88fa-4a81-961f-c95cdd4a705d}</ProjectGuid>
+    <RootNamespace>lpmappertest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -116,7 +116,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,22 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="kdmapper\intel_driver.cpp" />
-    <ClCompile Include="kdmapper\service.cpp" />
-    <ClCompile Include="kdmapper\utils.cpp" />
-    <ClCompile Include="lpmapper.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="kdmapper\intel_driver.hpp" />
-    <ClInclude Include="kdmapper\intel_driver_resource.hpp" />
-    <ClInclude Include="kdmapper\nt.hpp" />
-    <ClInclude Include="kdmapper\service.hpp" />
-    <ClInclude Include="kdmapper\utils.hpp" />
-    <ClInclude Include="shellcode.hpp" />
-    <ClInclude Include="structs.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="shellcode_raw.asm" />
+    <ClCompile Include="lpmapper-test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

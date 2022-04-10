@@ -57,4 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="shellcode_raw.asm">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

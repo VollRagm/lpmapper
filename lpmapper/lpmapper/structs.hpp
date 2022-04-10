@@ -24,7 +24,7 @@ typedef struct _DRIVER_OBJECT
     PVOID              MajorFunction[IRP_MJ_MAXIMUM_FUNCTION + 1];
 } DRIVER_OBJECT, * PDRIVER_OBJECT;
 
-typedef struct _DEVICE_OBJECT
+typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _DEVICE_OBJECT
 {
     int16_t                    Type;
     uint16_t                   Size;
