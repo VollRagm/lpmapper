@@ -85,10 +85,6 @@ bool GetDriverDispatch(uint64_t DriverObject, OUT uint64_t* DriverDispatch)
     uint64_t majorFunctionArray = DriverObject + offsetof(DRIVER_OBJECT, MajorFunction);
     uint64_t deviceIoDispatchAddress = majorFunctionArray + (sizeof(PVOID) * IRP_MJ_DEVICE_CONTROL);
 
-    std::cout << std::hex << DriverObject << std::endl;
-    std::cout << std::hex << majorFunctionArray << std::endl;
-    std::cout << std::hex << deviceIoDispatchAddress << std::endl;
-   
     return intel_driver::ReadMemory(IntelDriverHandle, deviceIoDispatchAddress, DriverDispatch, sizeof(uint64_t));
 }
 
@@ -132,7 +128,7 @@ int main()
     uint64_t OriginalDispatch = 0;
     GetDriverDispatch(BeepDriverObject, &OriginalDispatch);
 
-    std::cout << std::hex << OriginalDispatch << std::endl;
+    Log(L"Found original dispatch -> " << std::endl);
 
     uint64_t shellcodeAddress = 0;
 
@@ -156,6 +152,8 @@ int main()
 
     // Point beep.sys dispatch to our shellcode inside of the beep.sys .data section
     HookDriverDispatch(BeepDriverObject, shellcodeAddress);
+    Log(L"[+] Hooked driver dispatch! Done." << std::endl;);
+
 
     intel_driver::Unload(IntelDriverHandle);
 
